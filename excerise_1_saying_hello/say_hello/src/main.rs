@@ -5,14 +5,14 @@ use text_io::read;
 fn main() {
     let mut flag: bool = true;
     let mut greet_vector: Vec<String> = Vec::new();
-    greet_vector.push("Dia dhuit".parse().unwrap());
-    greet_vector.push("Annyeonghaseo".parse().unwrap());
-    greet_vector.push("Hello".parse().unwrap());
-    greet_vector.push("Why hello there".parse().unwrap());
+    greet_vector.push("Dia dhuit".to_string());
+    greet_vector.push("Annyeonghaseo".to_string());
+    greet_vector.push("Hello".to_string());
+    greet_vector.push("Why hello there".to_string());
 
-    println!("Hello, what is your name?");
 
     while flag {
+        println!("Hello, what is your name?");
         let name: String = read!();
         println!(
             "{:?}, {}! Nice to meet you",
@@ -21,7 +21,7 @@ fn main() {
         );
         let c: String = read!();
         println!("Want another greeting?");
-        if c == "yes".parse().unwrap() || c == "y".parse().unwrap() {
+        if c == "yes".to_string() || c == "y".to_string() {
             continue;
         } else {
             flag = false;

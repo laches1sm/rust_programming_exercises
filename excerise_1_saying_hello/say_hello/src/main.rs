@@ -4,24 +4,21 @@ use text_io::read;
 
 fn main() {
     let mut flag: bool = true;
-    let mut greet_vector: Vec<String> = Vec::new();
-    greet_vector.push("Dia dhuit".to_string());
-    greet_vector.push("Annyeonghaseo".to_string());
-    greet_vector.push("Hello".to_string());
-    greet_vector.push("Why hello there".to_string());
-
+    let mut greet_vector = vec!["Dia dhuit", "Annyeonghaseo", "Hello", "Why hello there"];
+    let mut rng = rand::thread_rng();
 
     while flag {
         println!("Hello, what is your name?");
         let name: String = read!();
         println!(
-            "{:?}, {}! Nice to meet you",
-            greet_vector.choose(&mut rand::thread_rng()),
+            "{}, {}! Nice to meet you",
+            greet_vector.choose(&mut rng).unwrap(),
             name
         );
         let c: String = read!();
+        let c = c.trim();
         println!("Want another greeting?");
-        if c == "yes".to_string() || c == "y".to_string() {
+        if c == "yes" || c == "y" {
             continue;
         } else {
             flag = false;

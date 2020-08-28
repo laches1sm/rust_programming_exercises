@@ -8,6 +8,4 @@ fn main() {
       println!("Input should not be empty.")
    }
    println!("{} has {} characters.", input_str, input_str.len());
-
-
 }
